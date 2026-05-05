@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 
 function App () {
   return(
-    <Router>
+    <Router basename="/ngit-ambassador-portal">
       <ScrollToTop />
       <Routes>
         <Route path="/about" element={<AboutPage />} />
@@ -40,6 +40,7 @@ function App () {
 />
       </Routes>
       <Footer />
+      
     </Router>
  
   );

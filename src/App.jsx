@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 
 function App () {
   return(
-    <Router basename="/ngit-ambassador-portal">
+    <Router basename="/ngit-ambassador-portal/">
       <ScrollToTop />
       <Routes>
         <Route path="/about" element={<AboutPage />} />

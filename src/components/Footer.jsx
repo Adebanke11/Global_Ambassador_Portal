@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, Home } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('');
+
   const ngit = {
     royal: '#52295a',
     deep: '#130c14',
     gold: '#ffcc00',
+  };
+
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzxieI6dRzosKy19w-sHhmEc32bcVBjPNroL2HTNBjGo9g_cH-uVFj0stAgfqWWExI/exec';
+
+    const formData = new FormData();
+    formData.append('Email', email);
+    formData.append('Source', 'Ambassador Portal');
+
+    fetch(scriptURL, { method: 'POST', body: formData})
+      .then(response => {
+        setStatus('Success! You have joined the NGiT network.');
+        setEmail('');
+      })
+      .catch(error => {
+        setStatus('Error: Please try again.');
+        console.error('Error!', error.message);
+      });
   };
 
   return (
@@ -63,26 +87,31 @@ const Footer = () => {
 
           {/* Newsletter / CTA */}
           <div className="col-lg-3 col-md-4">
-            <h6 className="fw-bold mb-4">Stay Updated</h6>
+      <h6 className="fw-bold mb-4">Stay Updated</h6>
             <p className="small text-white-50">Subscribe to receive the latest news on our programs, training cohorts, and tech events.</p>
-            <div className="input-group mb-3">
-              <input 
-                type="email" 
-                className="form-control border-0 bg-light p-2 text-dark" 
-                placeholder="amina.b@example.com" 
-                style={{ borderRadius: '8px 0 0 8px', fontSize: '13px' }}
-              />
-              <button 
+      <form onSubmit={handleSubmit}>
+        <div className="input-group mb-3">
+        <input 
+          type="email" 
+          name="Email" 
+          placeholder="Enter your email" className="form-control border-0 bg-light p-2 text-dark"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required 
+          style={{ borderRadius: '8px 0 0 8px', fontSize: '13px' }}
+        />
+         <button type='submit'
                 className="btn" 
                 style={{ backgroundColor: ngit.gold, color: ngit.deep, borderRadius: '0 8px 8px 0' }}
               >
                 Join
               </button>
-            </div>
-          </div>
-
+              </div>
+      </form>
+      {status && <p className="status-message">{status}</p>}
+    </div>
         </div>
-
+        
         <hr className="mt-5 mb-4" style={{ opacity: 0.1 }} />
 
         <div className="row align-items-center">

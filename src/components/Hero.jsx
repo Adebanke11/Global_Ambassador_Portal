@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, 
-{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Nav } from 'react-bootstrap';

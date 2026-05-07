@@ -4,7 +4,6 @@ import { Calendar, BookOpenCheck, Target, BarChart3, Radio, MessageSquareText, P
 const Programs = () => {
   const [activePillar, setActivePillar] = useState('fellowship');
 
-  // NGiT Core Theme
   const theme = {
     deep: '#491754',
     accent: '#52295a',
@@ -19,7 +18,6 @@ const Programs = () => {
     { id: 'reporting', title: "Impact Assessment (KPIs)", icon: <BarChart3 size={18} />, color: '#fff' }
   ];
 
-  // Updated SEO-Focused Learning Path (8 Modules)
   const learningPath = [
     { m: 'M1', title: "Institutional Foundations", desc: "NGiT mission, modular tech integrations, and strategic impact frameworks.", tags: ["Master the Narrative"] },
     { m: 'M2', title: "Applied AI Fundamentals", desc: "Exploring AI’s role in the African digital economy; translating complex tech concepts.", tags: ["AI READINESS"] },

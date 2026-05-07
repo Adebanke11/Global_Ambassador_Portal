@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Navbar, Container, Nav, Offcanvas, NavDropdown } from "react-bootstrap";
 import image from '../assets/ngit_logo.png';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter } from 'react-icons/fa6';

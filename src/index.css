@@ -119,7 +119,10 @@ border: 1px solid #fff !important;
   z-index: 1; 
   background-color: #491754; 
 }
-
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #803c98 #f8f4f9;
+}
 ::-webkit-scrollbar {
   width: 6px; 
 }
@@ -142,10 +145,10 @@ border: 1px solid #fff !important;
 
 @media screen and (max-width: 576px){
   p{
-    font-size: 12px !important;
+    font-size: 14px !important;
   }
   #faq{
-     font-size: 12px !important;
+     font-size: 14px !important;
      scroll-margin-top: 30px; 
   }
   #apply {

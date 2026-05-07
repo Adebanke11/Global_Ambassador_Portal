@@ -10,7 +10,8 @@ import FinalCTA from "./components/FinalCTA";
 import PartnerInstitution from "./components/partner";
 import FAQ from "./components/Faq";
 import { Import } from "lucide-react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutPage from './components/AboutPage';
 import Footer from "./components/Footer";
 

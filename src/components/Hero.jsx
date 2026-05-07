@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -112,20 +113,20 @@ useEffect(() => {
 
             <div className="d-flex flex-wrap gap-3">
               <div className='arrow-btn2'>
-             <a href="#apply_now">
+             <HashLink smooth to="/#apply">
               <button className="btn btn-lg px-3 py-3 fw-bold shadow-lg " 
                       style={{ backgroundColor: colors.accent, color: colors.dark, border: 'none', borderRadius: '12px' }}>
                 Apply as Ambassador <span className="arrow2"> → </span>
               </button>
-              </a>
+              </HashLink>
               </div>
            
-           <a href="#program" style={{ textDecoration: 'none' }}>
+           <HashLink smooth to="/#program" style={{ textDecoration: 'none' }}>
                <button className="btn btn-lg px-3 py-3 fw-bold shadow-lg btn-hover text-white" 
                       style={{ backgroundColor: 'inherit', color: colors.dark, border: '0.5px solid #cccccc77', borderRadius: '12px' }}>
                 Explore the Program
               </button>
-              </a> 
+              </HashLink> 
              
             </div>
 <div className="hero-hr"></div>

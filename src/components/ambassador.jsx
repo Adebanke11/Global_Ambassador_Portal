@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { Megaphone, Users, Calendar, Share2, Award, Zap } from 'lucide-react';
 
 const AmbassadorRoles = () => {
@@ -90,11 +91,11 @@ const AmbassadorRoles = () => {
             <h4 className="fw-bold mb-1">What's in it for you?</h4>
             <p className="mb-0 opacity-75">Mentorship, Global Networking, and Leadership Certification.</p>
           </div>
-          <a href="#apply">
+           <HashLink smooth to="/#apply">
             <button className="btn btn-lg fw-bold px-4" style={{ backgroundColor: ngit.gold, color: ngit.deep, borderRadius: '12px' }}>
               Check Eligibility
             </button>
-          </a>
+          </HashLink>
         </div>
       </div>
     </section>

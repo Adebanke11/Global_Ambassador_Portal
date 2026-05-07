@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle2, Star, School, UserCheck } from 'lucide-react';
 
 const Eligibility = () => {
+  // 1
+  const [formData, setFormData] = useState({
+    FirstName: '',
+    LastName: '',
+    Email: '',
+    Phone: '',
+    Institution: '',
+    Level: 'Select level',
+    Department: '',
+    Motivation: '',
+    Communities: ''
+  });
+
+  const [status, setStatus] = useState('');
   const ngit = {
     deep: '#491754',
     royal: '#52295a',
@@ -9,7 +23,44 @@ const Eligibility = () => {
     vibrant: '#803c98',
     lightGrey: '#f4f4f9'
   };
+// 2
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
+  // 3. Submit to Sheets
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('Processing your application...');
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzqMs6OcuIMXhzKld1O8630A-fE0aueuF_zE1WjGjxkm0CwNGzZzV3qpgWEwqWI8oAt1w/exec'; 
+
+    const dataToSend = new FormData();
+    // appending my form data
+    Object.keys(formData).forEach(key => {
+      dataToSend.append(key, formData[key]);
+    });
+    dataToSend.append('Source', 'Global Ambassador Application');
+
+    fetch(scriptURL, { method: 'POST', body: dataToSend })
+      .then(response => {
+        setStatus('Success! Your application has been received.');
+        // form reset post submission
+        setFormData({
+          FirstName: '', LastName: '', Email: '', Phone: '',
+          Institution: '', Level: 'Select level', Department: '',
+          Motivation: '', Communities: ''
+        });
+      })
+      .catch(error => {
+        setStatus('Error: Could not submit. Please try again.');
+        console.error('Error!', error.message);
+      });
+      };
   const requirements = [
     "Currently an undergraduate in any Nigerian Tertiary Institution.",
     "Passionate about technology and female empowerment.",
@@ -63,38 +114,38 @@ const Eligibility = () => {
       <p className="text-muted small">Fill in the form below and our team will be in touch within 3 business days.</p>
     </div>
 
-    <form className="row g-3">
+    <form className="row g-3" onSubmit={handleSubmit}>
       {/* Name Fields */}
       <div className="col-md-6">
         <label className="form-label small fw-bold">First Name *</label>
-        <input type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Amina" required />
+        <input name="FirstName" value={formData.FirstName} onChange={handleChange} type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Amina" required />
       </div>
       <div className="col-md-6">
         <label className="form-label small fw-bold">Last Name *</label>
-        <input type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Bakare" required />
+        <input name="LastName" value={formData.LastName} onChange={handleChange} type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Bakare" required />
       </div>
 
       {/* Email */}
       <div className="col-12">
         <label className="form-label small fw-bold">Email Address *</label>
-        <input type="email" className="form-control border-0 bg-light p-3 rounded-3" placeholder="aminaB@example.com" required />
+        <input name="Email" value={formData.Email} onChange={handleChange} type="email" className="form-control border-0 bg-light p-3 rounded-3" placeholder="aminaB@example.com" required />
       </div>
 
       {/* Phone */}
       <div className="col-12">
         <label className="form-label small fw-bold">Phone Number *</label>
-        <input type="tel" className="form-control border-0 bg-light p-3 rounded-3" placeholder="+234 800 000 0000" required />
+        <input name="Phone" value={formData.Phone} onChange={handleChange} type="tel" className="form-control border-0 bg-light p-3 rounded-3" placeholder="+234 800 000 0000" required />
       </div>
 
       {/* Institution Info */}
       <div className="col-md-7">
         <label className="form-label small fw-bold">University / Institution *</label>
-        <input type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="University of Lagos" required />
+        <input name="Institution" value={formData.Institution} onChange={handleChange} type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="University of Lagos" required />
       </div>
       <div className="col-md-5">
         <label className="form-label small fw-bold">Current Year *</label>
-        <select className="form-select border-0 bg-light p-3 rounded-3 shadow-none">
-          <option>Select level</option>
+        <select name="Level" value={formData.Level} onChange={handleChange} className="form-select border-0 bg-light p-3 rounded-3 shadow-none required">
+          <option value="">Select level</option>
           <option>100 Level</option>
           <option>200 Level</option>
           <option>300 Level</option>
@@ -105,67 +156,41 @@ const Eligibility = () => {
       {/* Dept */}
       <div className="col-12">
         <label className="form-label small fw-bold">Department / Course of Study *</label>
-        <input type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="e.g. Economics, Law, Engineering, etc." required />
+        <input name="Department" value={formData.Department} onChange={handleChange} type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="e.g. Economics, Law, Engineering, etc." required />
       </div>
 
       {/* Long Text */}
       <div className="col-12">
         <label className="form-label small fw-bold">Why do you want to be an NGiT Ambassador? *</label>
-        <textarea className="form-control border-0 bg-light p-3 rounded-3" rows="4" placeholder="Share your motivation and community involvement..."></textarea>
+        <textarea name="Motivation" value={formData.Motivation} onChange={handleChange} className="form-control border-0 bg-light p-3 rounded-3" rows="4" placeholder="Share your motivation and community involvement..."></textarea>
       </div>
 
       <div className="col-12">
         <label className="form-label small fw-bold">What student communities or clubs are you part of?</label>
-        <input type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Tech Club, Student Union, etc." />
+        <input name="Communities" value={formData.Communities} onChange={handleChange} type="text" className="form-control border-0 bg-light p-3 rounded-3" placeholder="Tech Club, Student Union, etc." />
       </div>
+{/* Status Message Display */}
+          {status && (
+            <div className="col-12 text-center p-2 rounded-3" 
+                 style={{ backgroundColor: status.includes('Success') ? '#d4edda' : '#f8d7da', 
+                          color: status.includes('Success') ? '#155724' : '#721c24',
+                          fontSize: '14px' }}>
+              {status}
+            </div>
+          )}
 
       {/* Submit Button */}
       <div className="col-12 mt-4">
         <button type="submit" 
                 className="btn btn-lg w-100 py-3 fw-bold shadow-sm" 
-                style={{ backgroundColor: ngit.deep, color: '#fff', borderRadius: '12px' }}>
-          SUBMIT APPLICATION
+          style={{ backgroundColor: ngit.deep, color: '#fff', borderRadius: '12px' }}
+              disabled={status === 'Processing your application...'}>
+              {status === 'Processing your application...' ? 'SUBMITTING...' : 'SUBMIT APPLICATION'}
         </button>
       </div>
     </form>
   </div>
 </div>
-          {/* Right Card
-          <div className="col-lg-6">
-            <div className="p-4 p-md-5 h-100 rounded-5 text-white shadow-lg" 
-                 style={{ background: `linear-gradient(135deg, ${ngit.royal} 0%, ${ngit.deep} 100%)` }}>
-              <div className="d-flex align-items-center gap-3 mb-4">
-                <div className="p-2 rounded-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}>
-                  <Star color={ngit.gold} size={28} fill={ngit.gold} />
-                </div>
-                <h4 className="fw-bold mb-0">What makes you stand out?</h4>
-              </div>
-
-              <p className="opacity-75 mb-4">
-                Our selection process is highly competitive. We are searching for catalyst leaders who are less interested in titles and more obsessed with creating a tangible tech footprint.
-                </p>
-
-              <div className="space-y-4">
-                <div className="mb-4 p-3 rounded-4" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                   <h6 className="fw-bold text-gold" style={{ color: ngit.gold }}>Community Experience</h6>
-                   <small className="opacity-75">Tell us about clubs you've led or events you've volunteered for.</small>
-                </div>
-                <div className="mb-4 p-3 rounded-4" style={{ backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                   <h6 className="fw-bold text-gold" style={{ color: ngit.gold }}>The "Growth" Mindset</h6>
-                   <small className="opacity-75">You are eager to learn and help others grow in tech.</small>
-                </div>
-              </div>
-
-              <div className="mt-5 text-center">
-                <a href="#apply_now">
-                <button className="btn btn-lg w-100 py-3 fw-bold fs-mobile" 
-                        style={{ backgroundColor: ngit.gold, color: ngit.deep, borderRadius: '15px' }}>
-                  START APPLICATION 2026
-                </button>
-                </a>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

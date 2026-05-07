@@ -18,7 +18,7 @@ import Footer from "./components/Footer";
 
 function App () {
   return(
-    <Router basename="/ngit-ambassador-portal/">
+    <Router>
       <ScrollToTop />
       {/* <ResponsiveNav /> */}
       <Routes>

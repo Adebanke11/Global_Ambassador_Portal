@@ -91,7 +91,7 @@ const AboutPage = () => {
             <div className="col-lg-6" data-aos="fade-right">
               <h2 className="fw-bold mb-4">Grassroots Innovation</h2>
               <p className="mb-4 text-white-50">
-                We identify and train high-potential student leaders to serve as <strong>NGiT Ambassadors</strong> within their institutions. 
+                We identify and train high-potential student leaders to serve as <strong><span title='Naija Girls in Tech'>NGiT</span> Ambassadors</strong> within their institutions. 
           By providing them with industry-standard resources and curriculum support, we enable them to spearhead technical growth 
           and bridge the gender digital divide among their peers.
               </p>

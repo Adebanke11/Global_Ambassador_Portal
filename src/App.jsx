@@ -7,7 +7,7 @@ import PerformanceTiers from "./components/Tiers";
 import AmbassadorRoles from "./components/ambassador";
 import Eligibility from "./components/Eligibility";
 import FinalCTA from "./components/FinalCTA";
-// import Partner from "./components/partner";
+import PartnerInstitution from "./components/partner";
 import FAQ from "./components/Faq";
 import { Import } from "lucide-react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,8 +20,10 @@ function App () {
   return(
     <Router basename="/ngit-ambassador-portal/">
       <ScrollToTop />
+      {/* <ResponsiveNav /> */}
       <Routes>
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/partner" element={<PartnerInstitution />} />
          <Route 
           path="/" 
           element={
@@ -35,7 +37,6 @@ function App () {
 <Eligibility />
 <FAQ />
 <FinalCTA />
-{/* <Partner /> */}
 </> }
 />
       </Routes>

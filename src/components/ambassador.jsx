@@ -90,7 +90,7 @@ const AmbassadorRoles = () => {
             <h4 className="fw-bold mb-1">What's in it for you?</h4>
             <p className="mb-0 opacity-75">Mentorship, Global Networking, and Leadership Certification.</p>
           </div>
-          <a href="#eligibility">
+          <a href="#apply">
             <button className="btn btn-lg fw-bold px-4" style={{ backgroundColor: ngit.gold, color: ngit.deep, borderRadius: '12px' }}>
               Check Eligibility
             </button>

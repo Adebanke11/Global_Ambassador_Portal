@@ -70,7 +70,7 @@ const ResponsiveNav = () => {
                   <small className="text-muted" style={{ fontSize: '11px' }}>Join the 2026/27 Fellowship</small>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/">
+                <NavDropdown.Item as={Link} to="/partner">
                   <div className="fw-bold">Partner Institution</div>
                   <small className="text-muted" style={{ fontSize: '11px' }}>Schools & Organizations</small>
                 </NavDropdown.Item>
@@ -163,7 +163,7 @@ const ResponsiveNav = () => {
                   <small className="text-muted" style={{ fontSize: '11px' }}>Join the 2026/27 Fellowship</small>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to="/" onClick={handleClose}>
+                <NavDropdown.Item as={Link} to="/partner" onClick={handleClose}>
                   <div className="fw-bold">Partner Institution</div>
                   <small className="text-muted" style={{ fontSize: '11px' }}>Schools & Organizations</small>
                 </NavDropdown.Item>

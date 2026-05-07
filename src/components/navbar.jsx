@@ -3,6 +3,7 @@ import { Navbar, Container, Nav, Offcanvas, NavDropdown } from "react-bootstrap"
 import image from '../assets/ngit_logo.png';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const ResponsiveNav = () => {
   const theme = {
@@ -54,17 +55,17 @@ const ResponsiveNav = () => {
           <Navbar.Collapse className="d-none d-lg-flex">
             <Nav className="mx-auto">
               <Nav.Link as={Link} to="/about" className="nav-link-black px-3">About</Nav.Link>
-                 <Nav.Link href="/#program" className="nav-link-black px-3">Program</Nav.Link>
-               <Nav.Link href="#tiers" className="nav-link-black px-3">Tiers</Nav.Link>
+                 <Nav.Link as={HashLink} smooth to="/#program" className="nav-link-black px-3">Program</Nav.Link>
+               <Nav.Link as={HashLink} smooth to="/#tiers" className="nav-link-black px-3">Tiers</Nav.Link>
                <Nav.Link href="https://naijagirlsintech.ng/blog/" target="_blank" className="nav-link-black px-3">Blog</Nav.Link>
-               <Nav.Link href="#faq" className="nav-link-black px-3">FAQ</Nav.Link>
+               <Nav.Link as={HashLink} smooth to="/#faq" className="nav-link-black px-3">FAQ</Nav.Link>
             {/* Drop-down */}
 <NavDropdown 
                 title="Apply Now" 
                 id="apply-dropdown" 
                 className="apply-dropdown-custom ms-5"
               >
-                <NavDropdown.Item href="#apply">
+                <NavDropdown.Item as={HashLink} smooth to="/#apply">
                   <div className="fw-bold">Student Ambassador</div>
                   <small className="text-muted" style={{ fontSize: '11px' }}>Join the 2026/27 Fellowship</small>
                 </NavDropdown.Item>
@@ -148,16 +149,16 @@ const ResponsiveNav = () => {
             <div className="d-flex justify-content-between">
           <Nav.Link as={Link} to="/about" className="nav-link-black px-3" onClick={handleClose}>About</Nav.Link>
              </div>
-               <Nav.Link href="/#program" className="nav-link-black px-3" onClick={handleClose}>Program</Nav.Link>
-               <Nav.Link href="#tiers" className="nav-link-black px-3" onClick={handleClose}>Tiers</Nav.Link>
-               <Nav.Link href="#faq" className="nav-link-black px-3" onClick={handleClose}>FAQ</Nav.Link>
+               <Nav.Link as={HashLink} smooth to="/#program" className="nav-link-black px-3" onClick={handleClose}>Program</Nav.Link>
+               <Nav.Link as={HashLink} smooth to="/#tiers" className="nav-link-black px-3" onClick={handleClose}>Tiers</Nav.Link>
+               <Nav.Link as={HashLink} smooth to="/#faq" className="nav-link-black px-3" onClick={handleClose}>FAQ</Nav.Link>
                {/* Dropdown mobile */}
                <NavDropdown 
                 title="Apply Now" 
                 id="apply-dropdown" 
                 className="apply-dropdown-custom"
               >
-                <NavDropdown.Item href="#apply" onClick={handleClose}>
+                <NavDropdown.Item as={HashLink} smooth to="/#apply" onClick={handleClose}>
                   <div className="fw-bold">Student Ambassador</div>
                   <small className="text-muted" style={{ fontSize: '11px' }}>Join the 2026/27 Fellowship</small>
                 </NavDropdown.Item>

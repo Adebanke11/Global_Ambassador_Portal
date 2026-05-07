@@ -41,6 +41,9 @@ const Footer = () => {
           
           {/* Brand & Mission */}
           <div className="col-lg-6">
+<a href='https://naijagirlsintech.ng/' style={{
+  textDecoration:'none', color: ngit.gold
+}}><p>Naija Girls in Tech</p></a>
             <p className="text-white-50 small mb-4" style={{ lineHeight: '1.8' }}>
               Bridging the gender digital divide by empowering the next generation of 
               female tech leaders through campus-led innovation and community impact.
@@ -111,7 +114,7 @@ const Footer = () => {
       {status && <p className="status-message">{status}</p>}
     </div>
         </div>
-        
+
         <hr className="mt-5 mb-4" style={{ opacity: 0.1 }} />
 
         <div className="row align-items-center">

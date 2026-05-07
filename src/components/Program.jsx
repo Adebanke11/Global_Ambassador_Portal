@@ -79,11 +79,11 @@ const Programs = () => {
           ))}
         </div>
 
-        {/* CURRICULUM and CALENDAR GRID */}
+        {/* CALENDAR */}
         <div className="row g-5 align-items-start">
           
           {/* MODULES  */}
-          <div className="col-lg-7" data-aos="fade-right">
+          <div className="col-lg-7">
             <h4 className="fw-bold mb-4" style={{ color: theme.gold }}>Technical & Leadership Learning Path</h4>
             <div className="row g-3">
               {learningPath.map((mod, idx) => (

@@ -21,9 +21,12 @@ const Eligibility = () => {
   ];
 
   return (
-    <section className="py-5" id="eligibility" style={{ backgroundColor: ngit.lightGrey }}>
+    <section className="py-5" id="apply" style={{ backgroundColor: ngit.lightGrey }}>
       <div className="container py-5">
         <div className="text-center mb-5">
+            <small className="text-uppercase fw-bold tracking-widest" style={{ color: ngit.gold, letterSpacing: '3px' }}>
+            Application
+          </small>
           <h2 className="display-5 fw-black" style={{ color: ngit.deep }}>Are you the <span style={{ color: ngit.vibrant }}>Chosen One?</span></h2>
           <p className="text-muted">Review the requirements below before starting your application.</p>
         </div>
@@ -51,7 +54,7 @@ const Eligibility = () => {
           </div>
 
 {/* Application Form */}
-<div className="col-lg-6 mt-5 mt-lg-0" id="apply">
+<div className="col-lg-6 mt-5 mt-lg-0">
   <div className="p-4 p-md-5 h-100 rounded-5 text-dark shadow-lg bg-white" 
        style={{ border: `1px solid rgba(0,0,0,0.05)` }}>
     

@@ -107,10 +107,27 @@ const AboutPage = () => {
               <div className="p-4 rounded-4" style={{ borderLeft: `5px solid ${theme.gold}`, background: theme.accent }}>
                 <h4 className="fw-bold">Current Impact Goals</h4>
                 <ul className="list-unstyled mt-3">
-                  <li className="mb-3"><Users color="#ffcc00" size={35} strokeWidth={1.5}/> Reaching 10,000+ students by end of 2026.</li>
-                  <li className="mb-3"><MapPin color="#fff" fill="#ffcc00" size={35} strokeWidth={1.5}/> Active seminars in Lagos Nigeria and beyond.</li>
-                  <li className="mb-3"><Layers color="#fff" fill="#803c98" size={35} strokeWidth={1.5}/> Modular technical integration for school LMS.</li>
-                </ul>
+  <li className="mb-4 d-flex align-items-start gap-3">
+    <div className="flex-shrink-0">
+      <Users color="#ffcc00" size={35} strokeWidth={1.5}/>
+    </div>
+    <span className="fw-medium">Reaching 10,000+ students by end of 2026.</span>
+  </li>
+
+  <li className="mb-4 d-flex align-items-start gap-3">
+    <div className="flex-shrink-0">
+      <MapPin color="#fff" fill="#ffcc00" size={35} strokeWidth={1.5}/>
+    </div>
+    <span className="fw-medium">Active seminars in Lagos Nigeria and beyond.</span>
+  </li>
+
+  <li className="mb-4 d-flex align-items-start gap-3">
+    <div className="flex-shrink-0">
+      <Layers color="#fff" fill="#803c98" size={35} strokeWidth={1.5}/>
+    </div>
+    <span className="fw-medium">Modular technical integration for school LMS.</span>
+  </li>
+</ul>
               </div>
             </div>
           </div>

@@ -37,7 +37,7 @@ const Eligibility = () => {
     e.preventDefault();
     setStatus('Processing your application...');
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzqMs6OcuIMXhzKld1O8630A-fE0aueuF_zE1WjGjxkm0CwNGzZzV3qpgWEwqWI8oAt1w/exec'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzmnJzT0c01QhgH-dTt3456eB_vlKyT4QQhMrIWEgFV602k_6g2T9no-6w9T9FIUJHxow/exec'; 
 
     const dataToSend = new FormData();
     // appending my form data

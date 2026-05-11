@@ -41,7 +41,7 @@ const ResponsiveNav = () => {
       >
         <Container fluid>
           <Navbar.Brand href="/" className="d-flex align-items-center">
-            <Link as={HashLink} smooth to="/" onClick={handleClose}><img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" /></Link>
+            <Link as={HashLink} smooth to="/" onClick={handleClose}> <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" /></Link>
             <div className="d-none d-lg-block">
               <h5 className="mb-0 fw-bold" style={{ color: '#3b1641', lineHeight: '1.2' }}><a href='/' style={{textDecoration: 'none', color: 'black'}}>NGiT</a></h5>
               <p className="mb-0 small text-muted text-uppercase" style={{ fontSize: '11px', letterSpacing: '1px' }}>

@@ -142,7 +142,7 @@ const ResponsiveNav = () => {
       {/* 3. Offcanvas */}
       <Offcanvas show={show} onHide={handleClose} placement="start" style={{ width: '70%' }}>
         <Offcanvas.Header closeButton>
-           <Offcanvas.Title className="fw-bold" style={{ color: theme.deep }}> <a href="/"><img src={image} alt="NGiT Logo" width="70" height="70" className="me-3"/> </a> </Offcanvas.Title>
+           <Offcanvas.Title className="fw-bold" style={{ color: theme.deep }}><Link as={HashLink} smooth to="/" onClick={handleClose}><img src={image} alt="NGiT Logo" width="70" height="70" className="me-3"/></Link> </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column gap-3">

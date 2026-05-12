@@ -41,7 +41,7 @@ const NewsletterPopup = () => {
 
     const formData = new FormData();
     formData.append('Email', email);
-    formData.append('Source', 'Global Popup');
+    formData.append('Source', 'Ambassador Portal');
 
     fetch(scriptURL, { method: 'POST', body: formData })
       .then(response => {

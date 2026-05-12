@@ -33,6 +33,9 @@ const NewsletterPopup = () => {
         border: 1px solid ${ngit.gold} !important; 
         box-shadow: none !important;
       }
+        .ngit-popup-input {
+  font-size: 16px !important; 
+}
       body { overflow-x: hidden; }
     `;
     document.head.appendChild(styleSheet);
@@ -133,7 +136,7 @@ const styles = {
     bottom: '30px',
     right: '30px',
     zIndex: 2000, 
-    width: 'auto', 
+    width: '280px', 
     height: 'auto',
     pointerEvents: 'none',
   },
@@ -152,7 +155,7 @@ const styles = {
     marginLeft: 'auto',
   },
   card: {
-    width: '280px',
+    width: '100%',
     backgroundColor: '#fff',
     borderRadius: '12px',
     boxShadow: '0 10px 40px rgba(0,0,0,0.2)',

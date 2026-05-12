@@ -28,6 +28,12 @@ const NewsletterPopup = () => {
         from { transform: translateY(50px); opacity: 0; }
         to { transform: translateY(0); opacity: 1; }
       }
+        .ngit-popup-input:focus {
+        outline: none !important;
+        border: 1px solid ${ngit.gold} !important; 
+        box-shadow: none !important;
+      }
+      body { overflow-x: hidden; }
     `;
     document.head.appendChild(styleSheet);
     return () => document.head.removeChild(styleSheet);
@@ -93,7 +99,7 @@ const NewsletterPopup = () => {
               <div className="input-group">
                 <input 
                   type="email" 
-                  className="form-control form-control-sm" 
+                  className="form-control form-control-sm ngit-popup-input" 
                   placeholder="Your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -126,7 +132,10 @@ const styles = {
     position: 'fixed',
     bottom: '30px',
     right: '30px',
-    zIndex: 2000, // Higher than navbars/footers
+    zIndex: 2000, 
+    width: 'auto', 
+    height: 'auto',
+    pointerEvents: 'none',
   },
   fab: {
     width: '50px',
@@ -139,6 +148,8 @@ const styles = {
     boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
     cursor: 'pointer',
     animation: 'slideInUp 0.4s ease-out',
+    pointerEvents: 'auto', 
+    marginLeft: 'auto',
   },
   card: {
     width: '280px',
@@ -148,6 +159,7 @@ const styles = {
     overflow: 'hidden',
     position: 'relative',
     animation: 'slideInUp 0.4s ease-out',
+    pointerEvents: 'auto',
   },
   closeBtn: {
     position: 'absolute',

@@ -21,7 +21,7 @@ const ResponsiveNav = () => {
   return (
     <>
       {/* 1. SOCIAL BAR */}
-      <div className='d-flex justify-content-center align-items-center py-2 bg-light'>
+      <div className='d-flex justify-content-center align-items-center py-2 bg-light' id="topbar">
         <p className='me-4 mb-0 small text-dark'>Follow our socials:</p>
         <div className="d-flex gap-3">
           <a href="https://www.facebook.com/share/1871JCCKP9/" target="_blank" rel="noopener noreferrer" className="social-hover"><FaFacebook color={theme.gold} size={18} /> </a>
@@ -44,7 +44,7 @@ const ResponsiveNav = () => {
             {/* <Link as={HashLink} smooth to="/#hero"> <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" /></Link> */}
             <HashLink 
   smooth 
-  to="/#hero"
+  to="/#topbar"
   scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
 >
   <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" />
@@ -153,7 +153,7 @@ const ResponsiveNav = () => {
             {/* <Link as={HashLink} smooth to="/" onClick={handleClose}><img src={image} alt="NGiT Logo" width="70" height="70" className="me-3"/></Link> */}
               <HashLink 
   smooth 
-  to="/#hero"
+  to="/#topbar"
   scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
 onClick={handleClose}>
   <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" />

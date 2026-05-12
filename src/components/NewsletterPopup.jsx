@@ -36,7 +36,10 @@ const NewsletterPopup = () => {
         .ngit-popup-input {
   font-size: 16px !important; 
 }
-      body { overflow-x: hidden; }
+  html, body {
+        max-width: 100%;
+        overflow-x: clip; 
+      }
     `;
     document.head.appendChild(styleSheet);
     return () => document.head.removeChild(styleSheet);
@@ -138,6 +141,7 @@ const styles = {
     zIndex: 2000, 
     width: '280px', 
     height: 'auto',
+    flexDirection: 'column',
     pointerEvents: 'none',
   },
   fab: {

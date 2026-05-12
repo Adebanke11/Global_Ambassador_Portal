@@ -41,7 +41,14 @@ const ResponsiveNav = () => {
       >
         <Container fluid>
           <Navbar.Brand href="/" className="d-flex align-items-center">
-            <Link as={HashLink} smooth to="/" onClick={handleClose}> <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" /></Link>
+            {/* <Link as={HashLink} smooth to="/#hero"> <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" /></Link> */}
+            <HashLink 
+  smooth 
+  to="/#hero"
+  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+>
+  <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" />
+</HashLink>
             <div className="d-none d-lg-block">
               <h5 className="mb-0 fw-bold" style={{ color: '#3b1641', lineHeight: '1.2' }}><a href='/' style={{textDecoration: 'none', color: 'black'}}>NGiT</a></h5>
               <p className="mb-0 small text-muted text-uppercase" style={{ fontSize: '11px', letterSpacing: '1px' }}>
@@ -142,7 +149,16 @@ const ResponsiveNav = () => {
       {/* 3. Offcanvas */}
       <Offcanvas show={show} onHide={handleClose} placement="start" style={{ width: '70%' }}>
         <Offcanvas.Header closeButton>
-           <Offcanvas.Title className="fw-bold" style={{ color: theme.deep }}><Link as={HashLink} smooth to="/" onClick={handleClose}><img src={image} alt="NGiT Logo" width="70" height="70" className="me-3"/></Link> </Offcanvas.Title>
+           <Offcanvas.Title className="fw-bold" style={{ color: theme.deep }}>
+            {/* <Link as={HashLink} smooth to="/" onClick={handleClose}><img src={image} alt="NGiT Logo" width="70" height="70" className="me-3"/></Link> */}
+              <HashLink 
+  smooth 
+  to="/#hero"
+  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+onClick={handleClose}>
+  <img src={image} alt="NGiT Logo" width="60" height="60" className="me-3" />
+</HashLink>
+             </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column gap-3">

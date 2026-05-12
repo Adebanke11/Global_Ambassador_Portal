@@ -74,7 +74,7 @@ useEffect(() => {
 
 
   return (
-    <section style={sectionStyle} className="position-relative">
+    <section style={sectionStyle} className="position-relative" id="hero">
   
       <div className="position-absolute top-0 end-0 translate-middle" 
            style={{width: '600px', height: '600px', background: colors.primary, filter: 'blur(150px)', opacity: '0.2' }}>

@@ -14,6 +14,7 @@ import { Import } from "lucide-react";
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import AboutPage from './components/AboutPage';
 import Footer from "./components/Footer";
+import NewsletterPopup from './components/NewsletterPopup';
 
 
 
@@ -42,7 +43,7 @@ function App () {
 />
       </Routes>
       <Footer />
-      
+      <NewsletterPopup />
     </Router>
  
   );
